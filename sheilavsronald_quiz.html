@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Sheila vs Ronald Quiz</title>
+</head>
+<body>
+  <h1>Sheila vs Ronald Quiz</h1>
+  <form>
+    <!-- Question 1 -->
+    <p>1. Does Sheila like ice cream?</p>
+    <input type="radio" id="q1-yes" name="q1" value="yes">
+    <label for="q1-yes">Yes</label>
+    <input type="radio" id="q1-no" name="q1" value="no">
+    <label for="q1-no">No</label>
+    <p id="q1-result"></p>
+
+    <!-- Question 2 -->
+    <p>2. Does Sheila like apples?</p>
+    <input type="radio" id="q2-yes" name="q2" value="yes">
+    <label for="q2-yes">Yes</label>
+    <input type="radio" id="q2-no" name="q2" value="no">
+    <label for="q2-no">No</label>
+    <p id="q2-result"></p>
+
+    <!-- Repeat the same pattern for all 15 questions -->
+
+    <!-- Question 15 -->
+    <p>15. Does Sheila like raspberries?</p>
+    <input type="radio" id="q15-yes" name="q15" value="yes">
+    <label for="q15-yes">Yes</label>
+    <input type="radio" id="q15-no" name="q15" value="no">
+    <label for="q15-no">No</label>
+    <p id="q15-result"></p>
+
+    <button id="submit-btn">Submit</button>
+  </form>
+
+  <script>
+    // Add JavaScript code to check answers and display results
+    const correctAnswers = {
+      q1: "yes",
+      q2: "yes",
+      q3: "yes",
+      // Add correct answers for all 15 questions
+      q15: "yes"
+    };
+
+    document.getElementById("submit-btn").addEventListener("click", (e) => {
+      e.preventDefault();
+      for (let i = 1; i <= 15; i++) {
+        const question = q${i};
+        const userAnswer = document.querySelector(input[name="${question}"]:checked).value;
+        const resultElement = document.getElementById(${question}-result);
+        if (userAnswer === correctAnswers[question]) {
+          resultElement.textContent = "Bravo!";
+        } else {
+          resultElement.textContent = "Al Anba!";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
